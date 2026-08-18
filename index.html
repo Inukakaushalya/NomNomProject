@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    >
+
+    <meta
+        name="description"
+        content="Nom Nom - Taste of Korea Korean Street Food Menu"
+    >
+
+    <meta name="theme-color" content="#ff4966">
+
+    <title>Nom Nom | Taste of Korea 🇰🇷</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Fredoka:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- =====================================================
+     WELCOME SCREEN
+===================================================== -->
+
+<div id="welcomeScreen" class="welcome-screen">
+
+    <div class="welcome-content">
+
+        <div class="welcome-lantern">
+            <img src="src/nomnom-removebg-preview.png" width="250px" height="250px" alt="not" srcset="">
+        </div>
+
+        <img
+            src="images/logo.png"
+            alt="Nom Nom"
+            class="welcome-logo"
+            onerror="this.style.display='none'"
+        >
+
+        <h1>NOM NOM</h1>
+
+        <p>Taste of Korea 🇰🇷</p>
+
+        <div class="welcome-loading">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="hero">
+
+    <div class="lantern lantern-left">🏮</div>
+    <div class="lantern lantern-right">🏮</div>
+
+    <div class="hero-decoration">✦</div>
+    <div class="hero-decoration two">♡</div>
+
+    <div class="hero-content">
+
+        <div class="logo-wrapper">
+
+            <img
+                src="images/logo.png"
+                alt="Nom Nom Logo"
+                class="logo"
+                onerror="this.style.display='none'"
+            >
+
+            <div class="logo-fallback">
+                <span>NOM</span>
+                <span>NOM</span>
+            </div>
+
+        </div>
+
+        <div class="festival-label">
+            UNIVERSITY FOOD FESTIVAL
+        </div>
+
+        <h1>
+            Taste of
+            <span>KOREA 🇰🇷</span>
+        </h1>
+
+        <p class="korean-text">
+            맛있게 드세요!
+        </p>
+
+        <p class="hero-subtitle">
+            Korean Street Food
+        </p>
+
+        <div class="scroll-indicator">
+            <span>↓</span>
+            Explore Our Menu
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     MAIN CONTENT
+===================================================== -->
+
+<main>
+
+    <!-- MENU INTRO -->
+    <section class="menu-section">
+
+        <div class="section-heading">
+
+            <div class="section-title-decoration">
+                ❤️
+            </div>
+
+            <div>
+                <p class="mini-title">OUR SPECIAL</p>
+
+                <h2>
+                    MENU
+                </h2>
+            </div>
+
+            <div class="section-title-decoration">
+                ❤️
+            </div>
+
+        </div>
+
+
+        <!-- SEARCH -->
+        <div class="search-container">
+
+            <span class="search-icon">🔍</span>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search food..."
+                autocomplete="off"
+            >
+
+            <button
+                id="clearSearch"
+                class="clear-search"
+                aria-label="Clear search"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <!-- CATEGORY BUTTONS -->
+        <div class="categories">
+
+            <button
+                class="category-btn active"
+                data-category="all"
+            >
+                🍽️ All
+            </button>
+
+            <button
+                class="category-btn"
+                data-category="food"
+            >
+                🍜 Food
+            </button>
+
+            <button
+                class="category-btn"
+                data-category="combo"
+            >
+                🔥 Combos
+            </button>
+
+        </div>
+
+
+        <!-- FOOD GRID -->
+        <div
+            id="foodGrid"
+            class="food-grid"
+        >
+
+            <!-- CORN DOG -->
+
+            <article
+                class="food-card"
+                data-category="food"
+                data-name="Corn Dog"
+                data-price="200"
+            >
+
+                <div class="food-image-container">
+
+                    <img
+                        src="src/cd-removebg-preview.png"
+                        alt="Corn Dog"
+                        class="food-image"
+                        loading="lazy"
+                    >
+
+                    <span class="food-badge">
+                        1 PCS
+                    </span>
+
+                </div>
+
+                <div class="food-info">
+
+                    <h3>
+                        Corn Dog
+                    </h3>
+
+                    <p>
+                        Crispy Korean-style corn dog with delicious sauces.
+                    </p>
+
+                    <div class="food-bottom">
+
+                        <div class="price">
+                            Rs. 200
+                        </div>
+
+                        <button
+                            class="add-btn"
+                            onclick="addToCart('Corn Dog', 200, 'images/corndog.jpg')"
+                        >
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- DUMPLINGS -->
+
+            <article
+                class="food-card"
+                data-category="food"
+                data-name="Dumplings"
+                data-price="150"
+            >
+
+                <div class="food-image-container">
+
+                    <img
+                        src="src/dmp-removebg-preview.png"
+                        alt="Korean Dumplings"
+                        class="food-image"
+                        loading="lazy"
+                    >
+
+                    <span class="food-badge">
+                        2 PCS
+                    </span>
+
+                </div>
+
+                <div class="food-info">
+
+                    <h3>
+                        Dumplings
+                    </h3>
+
+                    <p>
+                        Soft and juicy Korean-style dumplings.
+                    </p>
+
+                    <div class="food-bottom">
+
+                        <div class="price">
+                            Rs. 150
+                        </div>
+
+                        <button
+                            class="add-btn"
+                            onclick="addToCart('Dumplings', 150, 'images/dumplings.jpg')"
+                        >
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- RAMEN -->
+
+            <article
+                class="food-card"
+                data-category="food"
+                data-name="Ramen"
+                data-price="250"
+            >
+
+                <div class="food-image-container">
+
+                    <img
+                        src="src/ramen-removebg-preview.png"
+                        alt="Korean Ramen"
+                        class="food-image"
+                        loading="lazy"
+                    >
+
+                    <span class="food-badge">
+                        HOT 🔥
+                    </span>
+
+                </div>
+
+                <div class="food-info">
+
+                    <h3>
+                        Ramen
+                    </h3>
+
+                    <p>
+                        Hot and delicious Korean ramen with egg and vegetables.
+                    </p>
+
+                    <div class="food-bottom">
+
+                        <div class="price">
+                            Rs. 250
+                        </div>
+
+                        <button
+                            class="add-btn"
+                            onclick="addToCart('Ramen', 250, 'images/ramen.jpg')"
+                        >
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- TTEOKBOKKI -->
+
+            <article
+                class="food-card"
+                data-category="food"
+                data-name="Tteokbokki Sausages"
+                data-price="200"
+            >
+
+                <div class="food-image-container">
+
+                    <img
+                        src="src/stick-removebg-preview.png"
+                        alt="Tteokbokki and Sausages"
+                        class="food-image"
+                        loading="lazy"
+                    >
+
+                    <span class="food-badge">
+                        STICK
+                    </span>
+
+                </div>
+
+                <div class="food-info">
+
+                    <h3>
+                        Tteokbokki + Sausages
+                    </h3>
+
+                    <p>
+                        Spicy Korean rice cakes with delicious sausages.
+                    </p>
+
+                    <div class="food-bottom">
+
+                        <div class="price">
+                            Rs. 200
+                        </div>
+
+                        <button
+                            class="add-btn"
+                            onclick="addToCart(
+                                'Tteokbokki + Sausages',
+                                200,
+                                'images/tteokbokki.jpg'
+                            )"
+                        >
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+
+        <!-- NO RESULTS -->
+
+        <div
+            id="noResults"
+            class="no-results"
+        >
+            <div>🍜</div>
+            <h3>No food found!</h3>
+            <p>Try another search.</p>
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         COMBO SECTION
+    ================================================== -->
+
+    <section class="combo-section">
+
+        <div class="combo-heading">
+
+            <span>❤️</span>
+
+            <div>
+                <p>SPECIAL</p>
+                <h2>COMBO OFFERS</h2>
+            </div>
+
+            <span>🔥</span>
+
+        </div>
+
+
+        <div class="combo-grid">
+
+
+            <!-- COMBO 1 -->
+
+            <article class="combo-card combo-red">
+
+                <div class="combo-number">
+                    COMBO 1
+                </div>
+
+                <div class="combo-content">
+
+                    <div class="combo-foods">
+
+                        <div>
+                            <span>🍜</span>
+                            <small>Ramen</small>
+                        </div>
+
+                        <span class="plus">+</span>
+
+                        <div>
+                            <span>🌭</span>
+                            <small>Corn Dog</small>
+                        </div>
+
+                    </div>
+
+                    <h3>
+                        Ramen + Corn Dog
+                    </h3>
+
+                    <div class="combo-price">
+                        Rs. 400
+                    </div>
+
+                    <button
+                        class="combo-add"
+                        onclick="addCombo(
+                            'Combo 1 - Ramen + Corn Dog',
+                            400
+                        )"
+                    >
+                        Add Combo +
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- COMBO 2 -->
+
+            <article class="combo-card combo-orange">
+
+                <div class="combo-number">
+                    COMBO 2
+                </div>
+
+                <div class="combo-content">
+
+                    <div class="combo-foods">
+
+                        <div>
+                            <span>🍜</span>
+                            <small>Ramen</small>
+                        </div>
+
+                        <span class="plus">+</span>
+
+                        <div>
+                            <span>🥟</span>
+                            <small>Dumplings</small>
+                        </div>
+
+                    </div>
+
+                    <h3>
+                        Ramen + Dumplings
+                    </h3>
+
+                    <div class="save">
+                        SAVE Rs. 50!
+                    </div>
+
+                    <div class="combo-price">
+                        Rs. 350
+                    </div>
+
+                    <button
+                        class="combo-add"
+                        onclick="addCombo(
+                            'Combo 2 - Ramen + Dumplings',
+                            350
+                        )"
+                    >
+                        Add Combo +
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- COMBO 3 -->
+
+            <article class="combo-card combo-green">
+
+                <div class="combo-number">
+                    COMBO 3
+                </div>
+
+                <div class="combo-content">
+
+                    <div class="combo-foods">
+
+                        <div>
+                            <span>🌭</span>
+                            <small>Tteokbokki</small>
+                        </div>
+
+                        <span class="plus">+</span>
+
+                        <div>
+                            <span>🌭</span>
+                            <small>Corn Dog</small>
+                        </div>
+
+                    </div>
+
+                    <h3>
+                        Tteokbokki + Corn Dog
+                    </h3>
+
+                    <div class="save">
+                        SAVE Rs. 50!
+                    </div>
+
+                    <div class="combo-price">
+                        Rs. 350
+                    </div>
+
+                    <button
+                        class="combo-add"
+                        onclick="addCombo(
+                            'Combo 3 - Tteokbokki + Corn Dog',
+                            350
+                        )"
+                    >
+                        Add Combo +
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- COMBO 4 -->
+
+            <article class="combo-card combo-purple">
+
+                <div class="combo-number">
+                    COMBO 4
+                </div>
+
+                <div class="combo-content">
+
+                    <div class="combo-foods">
+
+                        <div>
+                            <span>🌭</span>
+                            <small>Tteokbokki</small>
+                        </div>
+
+                        <span class="plus">+</span>
+
+                        <div>
+                            <span>🥟</span>
+                            <small>Dumplings</small>
+                        </div>
+
+                    </div>
+
+                    <h3>
+                        Tteokbokki + Dumplings
+                    </h3>
+
+                    <div class="save">
+                        SAVE Rs. 50!
+                    </div>
+
+                    <div class="combo-price">
+                        Rs. 300
+                    </div>
+
+                    <button
+                        class="combo-add"
+                        onclick="addCombo(
+                            'Combo 4 - Tteokbokki + Dumplings',
+                            300
+                        )"
+                    >
+                        Add Combo +
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- COMBO 5 -->
+
+            <article class="combo-card combo-blue all-combo">
+
+                <div class="combo-number">
+                    COMBO 5
+                </div>
+
+                <div class="best-value">
+                    ⭐ BEST VALUE
+                </div>
+
+                <div class="combo-content">
+
+                    <h3>
+                        ALL IN ONE COMBO!
+                    </h3>
+
+                    <div class="all-combo-foods">
+
+                        <span>🍜</span>
+                        <span>+</span>
+                        <span>🌭</span>
+                        <span>+</span>
+                        <span>🥟</span>
+                        <span>+</span>
+                        <span>🍢</span>
+
+                    </div>
+
+                    <p>
+                        Ramen + Corn Dog + Dumplings + Tteokbokki
+                    </p>
+
+                    <div class="combo-price">
+                        Rs. 750
+                    </div>
+
+                    <button
+                        class="combo-add"
+                        onclick="addCombo(
+                            'Combo 5 - All In One',
+                            750
+                        )"
+                    >
+                        🔥 Add Best Value Combo
+                    </button>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         ABOUT / FOOTER MESSAGE
+    ================================================== -->
+
+    <section class="thank-you">
+
+        <div class="thank-you-decoration">
+            🌸
+        </div>
+
+        <h2>
+            감사합니다! ❤️
+        </h2>
+
+        <p>
+            Thank you for visiting
+            <strong>NOM NOM</strong>
+        </p>
+
+        <p class="small">
+            Eat. Enjoy. Love Korea! 🇰🇷
+        </p>
+
+        <div class="hearts">
+            ❤️ 🩷 💜 💙
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =====================================================
+     MOBILE CART BAR
+===================================================== -->
+
+<div
+    id="cartBar"
+    class="cart-bar"
+>
+
+    <div class="cart-bar-info">
+
+        <span class="cart-icon">
+            🛒
+        </span>
+
+        <div>
+
+            <strong>
+                <span id="cartCount">
+                    0
+                </span>
+                items
+            </strong>
+
+            <small>
+                Rs. <span id="cartTotal">
+                    0
+                </span>
+            </small>
+
+        </div>
+
+    </div>
+
+    <button
+        onclick="openCart()"
+        class="view-cart-btn"
+    >
+        View Cart →
+    </button>
+
+</div>
+
+
+<!-- =====================================================
+     CART MODAL
+===================================================== -->
+
+<div
+    id="cartModal"
+    class="modal"
+>
+
+    <div class="modal-overlay" onclick="closeCart()"></div>
+
+    <div class="cart-modal-content">
+
+        <button
+            class="close-modal"
+            onclick="closeCart()"
+        >
+            ×
+        </button>
+
+        <div class="cart-header">
+
+            <span>🛒</span>
+
+            <div>
+                <h2>Your Order</h2>
+                <p>맛있게 드세요! ❤️</p>
+            </div>
+
+        </div>
+
+
+        <div
+            id="cartItems"
+            class="cart-items"
+        >
+
+            <!-- JavaScript inserts items here -->
+
+        </div>
+
+
+        <div class="cart-empty" id="cartEmpty">
+
+            <div>🍜</div>
+
+            <h3>
+                Your cart is empty
+            </h3>
+
+            <p>
+                Add something delicious!
+            </p>
+
+        </div>
+
+
+        <div class="cart-footer">
+
+            <div class="total-row">
+
+                <span>
+                    Total
+                </span>
+
+                <strong>
+                    Rs. <span id="modalTotal">0</span>
+                </strong>
+
+            </div>
+
+            <button
+                class="order-btn"
+                onclick="placeOrder()"
+            >
+                🎉 Place Order
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     ORDER SUCCESS
+===================================================== -->
+
+<div
+    id="successModal"
+    class="modal"
+>
+
+    <div class="modal-overlay"></div>
+
+    <div class="success-content">
+
+        <div class="success-icon">
+            🎉
+        </div>
+
+        <h2>
+            Order Received!
+        </h2>
+
+        <p>
+            Thank you for ordering from
+            <strong>NOM NOM</strong> ❤️
+        </p>
+
+        <div class="order-number">
+
+            Order #
+
+            <strong id="orderNumber">
+                001
+            </strong>
+
+        </div>
+
+        <p class="success-small">
+            Please show this order number at the food counter.
+        </p>
+
+        <button
+            onclick="closeSuccess()"
+            class="success-btn"
+        >
+            Done ❤️
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="script.js"></script>
+
+</body>
+</html>

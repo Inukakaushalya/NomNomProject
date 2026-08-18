@@ -1,0 +1,2043 @@
+/* =====================================================
+   ROOT
+===================================================== */
+
+:root {
+
+    --pink: #f04463;
+    --pink-dark: #d92e50;
+    --pink-light: #fff0f3;
+
+    --yellow: #ffd83d;
+    --orange: #ff8a32;
+
+    --purple: #8054c7;
+    --green: #65a843;
+    --blue: #2170aa;
+
+    --cream: #fff8ec;
+    --cream-dark: #f7e8d2;
+
+    --black: #171717;
+    --gray: #686868;
+
+    --white: #ffffff;
+
+    --shadow:
+        0 10px 30px rgba(0, 0, 0, 0.10);
+
+    --radius:
+        22px;
+}
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    font-family:
+        "Baloo 2",
+        "Fredoka",
+        sans-serif;
+
+    background:
+        var(--cream);
+
+    color:
+        var(--black);
+
+    overflow-x: hidden;
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   WELCOME SCREEN
+===================================================== */
+
+.welcome-screen {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #fff3a8 0%,
+            #ffd63d 40%,
+            #ffb629 100%
+        );
+
+    transition:
+        opacity 0.7s ease,
+        visibility 0.7s ease;
+}
+
+.welcome-screen.hide {
+
+    opacity: 0;
+    visibility: hidden;
+}
+
+.welcome-content {
+
+    text-align: center;
+
+    animation:
+        welcomePop 0.8s ease;
+}
+
+.welcome-lantern {
+
+    font-size: 60px;
+
+    animation:
+        swing 2s ease-in-out infinite;
+}
+
+.welcome-logo {
+
+    width: 130px;
+    height: 130px;
+
+    object-fit: contain;
+
+    margin: 10px auto;
+}
+
+.welcome-content h1 {
+
+    font-family: "Fredoka", sans-serif;
+
+    font-size: 54px;
+
+    font-weight: 700;
+
+    color: var(--pink);
+
+    text-shadow:
+        3px 3px 0 #fff;
+}
+
+.welcome-content p {
+
+    font-size: 23px;
+
+    font-weight: 700;
+
+    color: #533e92;
+}
+
+.welcome-loading {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    margin-top: 20px;
+}
+
+.welcome-loading span {
+
+    width: 9px;
+    height: 9px;
+
+    background: var(--pink);
+
+    border-radius: 50%;
+
+    animation:
+        loadingDot 1s infinite ease-in-out;
+}
+
+.welcome-loading span:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.welcome-loading span:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+
+    position: relative;
+
+    min-height: 430px;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding:
+        60px 20px 45px;
+
+    background:
+
+        radial-gradient(
+            circle at 20% 30%,
+            rgba(255,255,255,0.8) 0 3px,
+            transparent 4px
+        ),
+
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(255,255,255,0.7) 0 3px,
+            transparent 4px
+        ),
+
+        linear-gradient(
+            145deg,
+            #fff0b5,
+            #ffe1e8
+        );
+
+    border-bottom:
+        7px solid var(--pink);
+}
+
+.hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 170%;
+    height: 120px;
+
+    bottom: -80px;
+    left: -35%;
+
+    background: var(--cream);
+
+    border-radius: 50% 50% 0 0;
+}
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 3;
+
+    width: 100%;
+
+    max-width: 600px;
+}
+
+.logo-wrapper {
+
+    width: 105px;
+    height: 105px;
+
+    margin:
+        0 auto 10px;
+}
+
+.logo {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+.logo-fallback {
+
+    display: none;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+
+    background: var(--yellow);
+
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+
+    font-family: "Fredoka", sans-serif;
+
+    font-size: 24px;
+
+    color: var(--pink);
+
+    border: 5px solid var(--pink);
+}
+
+.festival-label {
+
+    display: inline-block;
+
+    padding:
+        5px 14px;
+
+    border-radius: 30px;
+
+    background: var(--pink);
+
+    color: white;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    box-shadow:
+        0 5px 0 var(--pink-dark);
+}
+
+.hero h1 {
+
+    margin-top: 14px;
+
+    font-family: "Fredoka", sans-serif;
+
+    font-size: clamp(46px, 13vw, 85px);
+
+    line-height: 0.95;
+
+    font-weight: 700;
+
+    letter-spacing: -2px;
+}
+
+.hero h1 span {
+
+    display: block;
+
+    color: var(--pink);
+
+    text-shadow:
+        3px 3px 0 white,
+        5px 5px 0 rgba(240,68,99,0.18);
+}
+
+.korean-text {
+
+    font-size: 25px;
+
+    font-weight: 700;
+
+    margin-top: 12px;
+
+    color: #2e6090;
+}
+
+.hero-subtitle {
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    color: #555;
+
+    margin-top: -4px;
+}
+
+.scroll-indicator {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin-top: 20px;
+
+    color: var(--pink);
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    animation:
+        bounce 1.8s infinite;
+}
+
+.scroll-indicator span {
+    font-size: 20px;
+}
+
+.lantern {
+
+    position: absolute;
+
+    z-index: 2;
+
+    font-size: 65px;
+
+    top: 20px;
+
+    filter:
+        drop-shadow(0 5px 5px rgba(0,0,0,0.15));
+
+    animation:
+        swing 3s ease-in-out infinite;
+}
+
+.lantern-left {
+    left: 8px;
+}
+
+.lantern-right {
+    right: 8px;
+    animation-delay: 0.5s;
+}
+
+.hero-decoration {
+
+    position: absolute;
+
+    font-size: 35px;
+
+    color: var(--pink);
+
+    left: 20px;
+    bottom: 80px;
+
+    animation:
+        float 3s infinite ease-in-out;
+}
+
+.hero-decoration.two {
+
+    left: auto;
+    right: 25px;
+
+    color: var(--orange);
+
+    animation-delay: 1s;
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+main {
+    position: relative;
+}
+
+
+/* =====================================================
+   MENU SECTION
+===================================================== */
+
+.menu-section {
+
+    width: 100%;
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding:
+        35px 15px 20px;
+}
+
+.section-heading {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    text-align: center;
+
+    margin-bottom: 25px;
+}
+
+.mini-title {
+
+    color: var(--pink);
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.section-heading h2 {
+
+    font-family: "Fredoka", sans-serif;
+
+    font-size: 45px;
+
+    line-height: 0.9;
+
+    color: var(--black);
+}
+
+.section-title-decoration {
+
+    color: var(--pink);
+
+    font-size: 23px;
+
+    animation:
+        heartBeat 1.5s infinite;
+}
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+.search-container {
+
+    position: relative;
+
+    max-width: 600px;
+
+    margin:
+        0 auto 18px;
+}
+
+.search-container input {
+
+    width: 100%;
+
+    height: 54px;
+
+    border:
+        2px solid #ead6c0;
+
+    border-radius: 30px;
+
+    background: white;
+
+    padding:
+        0 50px 0 50px;
+
+    outline: none;
+
+    font-size: 16px;
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,0.04);
+
+    transition:
+        0.25s;
+}
+
+.search-container input:focus {
+
+    border-color:
+        var(--pink);
+
+    box-shadow:
+        0 0 0 4px rgba(240,68,99,0.1);
+}
+
+.search-icon {
+
+    position: absolute;
+
+    left: 19px;
+
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+
+    font-size: 20px;
+}
+
+.clear-search {
+
+    position: absolute;
+
+    right: 13px;
+
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+
+    border: none;
+
+    background: #eee;
+
+    width: 28px;
+    height: 28px;
+
+    border-radius: 50%;
+
+    font-size: 20px;
+
+    display: none;
+}
+
+
+/* =====================================================
+   CATEGORY
+===================================================== */
+
+.categories {
+
+    display: flex;
+
+    gap: 8px;
+
+    overflow-x: auto;
+
+    padding:
+        3px 0 15px;
+
+    scrollbar-width: none;
+
+    justify-content: center;
+}
+
+.categories::-webkit-scrollbar {
+    display: none;
+}
+
+.category-btn {
+
+    flex-shrink: 0;
+
+    border: none;
+
+    background: white;
+
+    padding:
+        9px 18px;
+
+    border-radius: 25px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    color: #555;
+
+    box-shadow:
+        0 4px 12px rgba(0,0,0,0.06);
+
+    transition:
+        0.25s;
+}
+
+.category-btn.active {
+
+    background: var(--pink);
+
+    color: white;
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 5px 15px rgba(240,68,99,0.25);
+}
+
+
+/* =====================================================
+   FOOD GRID
+===================================================== */
+
+.food-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 14px;
+}
+
+.food-card {
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: white;
+
+    border-radius:
+        var(--radius);
+
+    box-shadow:
+        var(--shadow);
+
+    border:
+        1px solid #f0dfcd;
+
+    transition:
+        transform 0.25s,
+        box-shadow 0.25s;
+
+    animation:
+        cardAppear 0.6s ease both;
+}
+
+.food-card:hover {
+
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.12);
+}
+
+.food-image-container {
+
+    position: relative;
+
+    width: 100%;
+
+    aspect-ratio: 1 / 0.82;
+
+    overflow: hidden;
+
+    background:
+        #f5eadb;
+}
+
+.food-image {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.4s;
+}
+
+.food-card:hover .food-image {
+
+    transform:
+        scale(1.07);
+}
+
+.food-badge {
+
+    position: absolute;
+
+    top: 9px;
+    right: 9px;
+
+    padding:
+        4px 8px;
+
+    background: var(--pink);
+
+    color: white;
+
+    border-radius: 12px;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    box-shadow:
+        0 3px 8px rgba(0,0,0,0.15);
+}
+
+.food-info {
+
+    padding:
+        11px 11px 13px;
+}
+
+.food-info h3 {
+
+    font-family: "Fredoka", sans-serif;
+
+    font-size: 19px;
+
+    line-height: 1.05;
+
+    margin-bottom: 5px;
+}
+
+.food-info p {
+
+    font-size: 12px;
+
+    line-height: 1.35;
+
+    color: var(--gray);
+
+    min-height: 34px;
+}
+
+.food-bottom {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-top: 10px;
+}
+
+.price {
+
+    color: var(--pink);
+
+    font-size: 19px;
+
+    font-weight: 800;
+}
+
+.add-btn {
+
+    border: none;
+
+    width: 37px;
+    height: 37px;
+
+    border-radius: 50%;
+
+    background: var(--pink);
+
+    color: white;
+
+    font-size: 25px;
+
+    line-height: 1;
+
+    box-shadow:
+        0 4px 10px rgba(240,68,99,0.3);
+
+    transition:
+        transform 0.2s;
+}
+
+.add-btn:active {
+
+    transform:
+        scale(0.85);
+}
+
+
+/* =====================================================
+   NO RESULTS
+===================================================== */
+
+.no-results {
+
+    display: none;
+
+    text-align: center;
+
+    padding: 50px 20px;
+
+    color: var(--gray);
+}
+
+.no-results div {
+    font-size: 60px;
+}
+
+.no-results h3 {
+
+    font-family: "Fredoka", sans-serif;
+
+    font-size: 25px;
+
+    color: var(--black);
+}
+
+
+/* =====================================================
+   COMBO SECTION
+===================================================== */
+
+.combo-section {
+
+    margin-top: 30px;
+
+    padding:
+        35px 15px 45px;
+
+    background:
+        #fff0e1;
+
+    border-top:
+        4px dashed #e6b88c;
+
+    border-bottom:
+        4px dashed #e6b88c;
+}
+
+.combo-heading {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 12px;
+
+    text-align: center;
+
+    margin-bottom: 25px;
+}
+
+.combo-heading > span {
+
+    font-size: 25px;
+
+    animation:
+        heartBeat 1.5s infinite;
+}
+
+.combo-heading p {
+
+    color: var(--pink);
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.combo-heading h2 {
+
+    font-family: "Fredoka", sans-serif;
+
+    font-size: 28px;
+
+    line-height: 1;
+}
+
+
+/* =====================================================
+   COMBO CARDS
+===================================================== */
+
+.combo-grid {
+
+    width: 100%;
+
+    max-width: 1000px;
+
+    margin: auto;
+
+    display: grid;
+
+    gap: 15px;
+}
+
+.combo-card {
+
+    position: relative;
+
+    overflow: hidden;
+
+    min-height: 235px;
+
+    padding:
+        20px;
+
+    border-radius:
+        25px;
+
+    color: white;
+
+    box-shadow:
+        0 12px 25px rgba(0,0,0,0.12);
+
+    transition:
+        transform 0.25s;
+}
+
+.combo-card:hover {
+    transform: translateY(-5px);
+}
+
+.combo-red {
+    background:
+        linear-gradient(135deg, #e6405c, #ff6b76);
+}
+
+.combo-orange {
+    background:
+        linear-gradient(135deg, #e77620, #ff9d42);
+}
+
+.combo-green {
+    background:
+        linear-gradient(135deg, #559634, #83bb51);
+}
+
+.combo-purple {
+    background:
+        linear-gradient(135deg, #7043ad, #9d72d5);
+}
+
+.combo-blue {
+    background:
+        linear-gradient(135deg, #16659b, #368dc4);
+}
+
+.combo-number {
+
+    display: inline-block;
+
+    background: rgba(255,255,255,0.95);
+
+    color: #333;
+
+    padding:
+        5px 11px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    font-weight: 800;
+}
+
+.combo-content {
+
+    text-align: center;
+
+    margin-top: 10px;
+}
+
+.combo-foods {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin: 10px 0;
+}
+
+.combo-foods > div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.combo-foods span {
+
+    font-size: 52px;
+
+    filter:
+        drop-shadow(0 5px 5px rgba(0,0,0,0.15));
+}
+
+.combo-foods small {
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+.plus {
+
+    font-size: 25px !important;
+
+    font-weight: 800;
+}
+
+.combo-card h3 {
+
+    font-family: "Fredoka", sans-serif;
+
+    font-size: 21px;
+}
+
+.combo-price {
+
+    font-size: 28px;
+
+    font-weight: 800;
+
+    margin:
+        5px 0 10px;
+}
+
+.save {
+
+    display: inline-block;
+
+    background:
+        rgba(255,255,255,0.9);
+
+    color: #333;
+
+    padding:
+        3px 9px;
+
+    border-radius: 10px;
+
+    font-size: 11px;
+
+    font-weight: 800;
+}
+
+.combo-add {
+
+    border: none;
+
+    padding:
+        9px 16px;
+
+    border-radius: 20px;
+
+    background: white;
+
+    color: #333;
+
+    font-weight: 800;
+
+    box-shadow:
+        0 4px 10px rgba(0,0,0,0.15);
+
+    transition:
+        transform 0.2s;
+}
+
+.combo-add:active {
+    transform: scale(0.94);
+}
+
+.all-combo {
+
+    min-height: 290px;
+}
+
+.all-combo h3 {
+
+    font-size: 30px;
+
+    margin-top: 10px;
+}
+
+.all-combo-foods {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    font-size: 40px;
+
+    margin:
+        15px 0;
+}
+
+.all-combo p {
+
+    font-size: 13px;
+
+    opacity: 0.95;
+}
+
+.best-value {
+
+    position: absolute;
+
+    right: -28px;
+    top: 15px;
+
+    transform:
+        rotate(7deg);
+
+    padding:
+        7px 35px;
+
+    background: #fff;
+
+    color: #333;
+
+    font-size: 10px;
+
+    font-weight: 900;
+}
+
+
+/* =====================================================
+   THANK YOU
+===================================================== */
+
+.thank-you {
+
+    text-align: center;
+
+    padding:
+        45px 20px 100px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #211e2a,
+            #15131a
+        );
+
+    color: white;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.thank-you::before {
+
+    content: "🌸  ✦  ♡  ✦  🌸  ✦  ♡  ✦";
+
+    position: absolute;
+
+    top: 12px;
+
+    left: 0;
+
+    width: 100%;
+
+    color: #ff8da0;
+
+    opacity: 0.6;
+
+    font-size: 18px;
+}
+
+.thank-you h2 {
+
+    font-family: "Fredoka", sans-serif;
+
+    font-size: 38px;
+
+    color: #ff6c86;
+
+    margin-top: 15px;
+}
+
+.thank-you p {
+
+    font-size: 17px;
+
+    color: #eee;
+}
+
+.thank-you .small {
+
+    font-size: 13px;
+
+    color: #aaa;
+
+    margin-top: 5px;
+}
+
+.hearts {
+
+    margin-top: 15px;
+
+    font-size: 20px;
+
+    letter-spacing: 5px;
+}
+
+
+/* =====================================================
+   CART BAR
+===================================================== */
+
+.cart-bar {
+
+    position: fixed;
+
+    z-index: 100;
+
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding:
+        10px 12px;
+
+    background:
+        rgba(255,255,255,0.96);
+
+    backdrop-filter:
+        blur(15px);
+
+    border:
+        1px solid #eee;
+
+    border-radius:
+        18px;
+
+    box-shadow:
+        0 10px 40px rgba(0,0,0,0.18);
+
+    transform:
+        translateY(150px);
+
+    transition:
+        transform 0.35s ease;
+}
+
+.cart-bar.show {
+
+    transform:
+        translateY(0);
+}
+
+.cart-bar-info {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+}
+
+.cart-icon {
+
+    width: 40px;
+    height: 40px;
+
+    display: grid;
+
+    place-items: center;
+
+    background: var(--pink-light);
+
+    border-radius: 12px;
+
+    font-size: 20px;
+}
+
+.cart-bar-info strong {
+
+    display: block;
+
+    font-size: 13px;
+}
+
+.cart-bar-info small {
+
+    display: block;
+
+    color: var(--pink);
+
+    font-weight: 800;
+
+    font-size: 13px;
+}
+
+.view-cart-btn {
+
+    border: none;
+
+    background: var(--pink);
+
+    color: white;
+
+    padding:
+        10px 15px;
+
+    border-radius: 13px;
+
+    font-weight: 800;
+}
+
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+.modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1000;
+
+    display: none;
+
+    align-items: flex-end;
+
+    justify-content: center;
+}
+
+.modal.show {
+
+    display: flex;
+}
+
+.modal-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        rgba(0,0,0,0.55);
+
+    backdrop-filter:
+        blur(4px);
+}
+
+.cart-modal-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    max-height: 90vh;
+
+    background:
+        var(--cream);
+
+    border-radius:
+        28px 28px 0 0;
+
+    padding:
+        25px 17px 20px;
+
+    overflow-y: auto;
+
+    animation:
+        slideUp 0.35s ease;
+}
+
+.close-modal {
+
+    position: absolute;
+
+    right: 17px;
+    top: 15px;
+
+    width: 35px;
+    height: 35px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #eee;
+
+    font-size: 24px;
+
+    color: #555;
+}
+
+.cart-header {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 20px;
+}
+
+.cart-header > span {
+
+    font-size: 35px;
+}
+
+.cart-header h2 {
+
+    font-family: "Fredoka", sans-serif;
+
+    font-size: 27px;
+}
+
+.cart-header p {
+
+    color: var(--pink);
+
+    font-size: 13px;
+}
+
+.cart-items {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.cart-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 10px;
+
+    background: white;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 4px 12px rgba(0,0,0,0.05);
+}
+
+.cart-item-image {
+
+    width: 55px;
+    height: 55px;
+
+    border-radius: 12px;
+
+    object-fit: cover;
+
+    background: #eee;
+}
+
+.cart-item-info {
+
+    flex: 1;
+}
+
+.cart-item-info h4 {
+
+    font-size: 14px;
+
+    line-height: 1.1;
+}
+
+.cart-item-info p {
+
+    color: var(--pink);
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    margin-top: 3px;
+}
+
+.quantity-controls {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+.quantity-controls button {
+
+    width: 27px;
+    height: 27px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: var(--pink-light);
+
+    color: var(--pink);
+
+    font-size: 18px;
+
+    font-weight: 800;
+}
+
+.quantity-controls span {
+
+    min-width: 15px;
+
+    text-align: center;
+
+    font-weight: 800;
+}
+
+.cart-empty {
+
+    text-align: center;
+
+    padding:
+        40px 20px;
+}
+
+.cart-empty div {
+    font-size: 60px;
+}
+
+.cart-empty h3 {
+
+    font-family: "Fredoka", sans-serif;
+
+    font-size: 22px;
+}
+
+.cart-empty p {
+
+    color: #777;
+
+    font-size: 14px;
+}
+
+.cart-footer {
+
+    margin-top: 20px;
+
+    padding-top: 15px;
+
+    border-top:
+        2px dashed #decab5;
+}
+
+.total-row {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 13px;
+
+    font-size: 17px;
+}
+
+.total-row strong {
+
+    color: var(--pink);
+
+    font-size: 25px;
+}
+
+.order-btn {
+
+    width: 100%;
+
+    border: none;
+
+    background: var(--pink);
+
+    color: white;
+
+    padding:
+        14px;
+
+    border-radius: 15px;
+
+    font-size: 17px;
+
+    font-weight: 800;
+
+    box-shadow:
+        0 7px 18px rgba(240,68,99,0.3);
+}
+
+
+/* =====================================================
+   SUCCESS
+===================================================== */
+
+.success-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: calc(100% - 30px);
+
+    max-width: 430px;
+
+    padding:
+        35px 25px;
+
+    background: white;
+
+    border-radius: 28px;
+
+    text-align: center;
+
+    animation:
+        welcomePop 0.4s ease;
+}
+
+.success-icon {
+
+    font-size: 65px;
+
+    animation:
+        bounce 1s infinite;
+}
+
+.success-content h2 {
+
+    font-family: "Fredoka", sans-serif;
+
+    font-size: 30px;
+
+    color: var(--pink);
+}
+
+.success-content p {
+
+    color: #555;
+
+    margin-top: 7px;
+}
+
+.order-number {
+
+    margin:
+        20px 0;
+
+    padding:
+        15px;
+
+    border-radius: 15px;
+
+    background: var(--pink-light);
+
+    color: #555;
+
+    font-size: 14px;
+}
+
+.order-number strong {
+
+    display: block;
+
+    font-size: 38px;
+
+    color: var(--pink);
+}
+
+.success-small {
+
+    font-size: 12px;
+
+    color: #888 !important;
+}
+
+.success-btn {
+
+    width: 100%;
+
+    margin-top: 15px;
+
+    border: none;
+
+    padding:
+        13px;
+
+    border-radius: 15px;
+
+    background: var(--pink);
+
+    color: white;
+
+    font-weight: 800;
+
+    font-size: 16px;
+}
+
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+@keyframes welcomePop {
+
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes loadingDot {
+
+    0%, 80%, 100% {
+        transform: scale(0.5);
+        opacity: 0.5;
+    }
+
+    40% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes swing {
+
+    0%, 100% {
+        transform: rotate(-4deg);
+    }
+
+    50% {
+        transform: rotate(4deg);
+    }
+}
+
+@keyframes bounce {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(7px);
+    }
+}
+
+@keyframes float {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+@keyframes heartBeat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    15% {
+        transform: scale(1.15);
+    }
+
+    30% {
+        transform: scale(1);
+    }
+}
+
+@keyframes cardAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (min-width: 600px) {
+
+    .hero {
+        min-height: 500px;
+    }
+
+    .food-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 20px;
+    }
+
+    .food-info {
+        padding: 15px;
+    }
+
+    .food-info h3 {
+        font-size: 23px;
+    }
+
+    .food-info p {
+        font-size: 14px;
+    }
+
+    .combo-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .all-combo {
+        grid-column:
+            span 2;
+    }
+
+    .cart-modal-content {
+
+        max-width: 550px;
+
+        border-radius:
+            28px;
+
+        margin-bottom: 30px;
+    }
+
+    .modal {
+        align-items: center;
+    }
+}
+
+
+/* =====================================================
+   DESKTOP
+===================================================== */
+
+@media (min-width: 900px) {
+
+    .hero {
+        min-height: 560px;
+    }
+
+    .lantern {
+        font-size: 90px;
+    }
+
+    .lantern-left {
+        left: 10%;
+    }
+
+    .lantern-right {
+        right: 10%;
+    }
+
+    .menu-section {
+        padding-top: 55px;
+    }
+
+    .food-grid {
+
+        grid-template-columns:
+            repeat(4, 1fr);
+
+        gap: 20px;
+    }
+
+    .combo-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 20px;
+    }
+
+    .all-combo {
+        grid-column:
+            span 2;
+    }
+
+    .cart-bar {
+        width: 430px;
+
+        left: auto;
+        right: 25px;
+    }
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        scroll-behavior:
+            auto !important;
+    }
+}
